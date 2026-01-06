@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Payment cancelled</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #020617;
+      --card-border: #1f2937;
+      --accent: #f97316;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Inter", sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 55%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      max-width: 520px;
+      width: 100%;
+      background: linear-gradient(135deg, rgba(15,23,42,0.98), rgba(15,23,42,0.96));
+      border-radius: 18px;
+      border: 1px solid var(--card-border);
+      padding: 28px 24px 24px;
+      box-shadow:
+        0 24px 60px rgba(15,23,42,0.9),
+        0 0 0 1px rgba(15,23,42,0.9);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(249,115,22,0.18), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+    .card-inner { position: relative; z-index: 1; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(248,250,252,0.1);
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #f97316;
+      box-shadow: 0 0 0 4px rgba(248,150,69,0.35);
+    }
+    h1 {
+      font-size: 24px;
+      line-height: 1.25;
+      margin: 0 0 8px 0;
+    }
+    .highlight { color: var(--accent); }
+    .lead {
+      margin: 0 0 18px 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    .box {
+      margin: 18px 0 22px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 0 0, rgba(248,150,69,0.14), transparent 70%);
+      border: 1px solid rgba(148,163,184,0.3);
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    .box strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+    .list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .list-bullet {
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      .card { padding: 22px 18px 18px; }
+      h1 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="card-inner">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Payment cancelled
+      </div>
+
+      <h1>
+        Your payment was <span class="highlight">cancelled</span>
+      </h1>
+
+      <p class="lead">
+        No charges were made. If you cancelled by mistake, you can simply go back
+        to the checkout link in your email and try again.
+      </p>
+
+      <div class="box">
+        <strong>Good news:</strong> nothing has been billed.  
+        If you still want to get your personalized marketing audit later, just
+        use the payment link again or reach out to our support team.
+      </div>
+
+      <ul class="list">
+        <li>
+          <div class="list-bullet">1</div>
+          <div>You can close this page safely. Your card has not been charged.</div>
+        </li>
+        <li>
+          <div class="list-bullet">2</div>
+          <div>To restart the payment, use the same link you received originally.</div>
+        </li>
+        <li>
+          <div class="list-bullet">3</div>
+          <div>Questions? Just reply to the last email you got from us.</div>
+        </li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
